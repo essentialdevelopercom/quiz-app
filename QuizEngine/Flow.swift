@@ -29,11 +29,7 @@ class Flow {
     }
     
     private func nextCallback(from question: String) -> Router.AnswerCallback {
-        return { [weak self] answer in
-            if let strongSelf = self {
-                strongSelf.routeNext(question, answer)
-            }
-        }
+        return { [weak self] in self?.routeNext(question, $0) }
     }
     
     private func routeNext(_ question: String, _ answer: String) {
