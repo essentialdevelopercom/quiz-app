@@ -7,9 +7,11 @@ import QuizEngine
 
 class iOSViewControllerFactory: ViewControllerFactory {
 
+    private let questions: [Question<String>]
     private let options: Dictionary<Question<String>, [String]>
     
-    init(options: Dictionary<Question<String>, [String]>) {
+    init(questions: [Question<String>], options: Dictionary<Question<String>, [String]>) {
+        self.questions = questions
         self.options = options
     }
     
@@ -25,14 +27,21 @@ class iOSViewControllerFactory: ViewControllerFactory {
         
         switch question {
         case .singleAnswer(let value):
-            return QuestionViewController(question: value, options: options, selection: answerCallback)
+            return questionViewController(for: question, value: value, options: options, answerCallback: answerCallback)
             
         case .multipleAnswer(let value):
-            let controller = QuestionViewController(question: value, options: options, selection: answerCallback)
+            let controller = questionViewController(for: question, value: value, options: options, answerCallback: answerCallback)
             _ = controller.view
             controller.tableView.allowsMultipleSelection = true
             return controller
         }
+    }
+    
+    private func questionViewController(for question: Question<String>, value: String, options: [String], answerCallback: @escaping ([String]) -> Void) -> QuestionViewController {
+        let presenter = QuestionPresenter(questions: questions, question: question)
+        let controller = QuestionViewController(question: value, options: options, selection: answerCallback)
+        controller.title = presenter.title
+        return controller
     }
 
     func resultsViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
