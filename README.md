@@ -1,7 +1,7 @@
 # Building a Swift App with TDD and Modular Design
 
 <div align="center">
-<p><img src="https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/58c93962d2b85703a20d7dab/1489583469778/?format=500w" alt="Professional iOS Engineering Season 1"></p>
+<p><img src="https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/59fc816a24a694eecd2422a5/1509720471662/professional_ios_engineering_season_1.png?format=500w" alt="Professional iOS Engineering Season 1"></p>
 </div>
 
 In this repository you can find the code written in the free YouTube season [Professional iOS Engineering — Season 1](https://www.essentialdeveloper.com/professional-ios-engineering-season-1/?utm_source=github.com&utm_medium=social&utm_campaign=pie_s01&utm_content=readme_intro) by [Essential Developer](https://www.essentialdeveloper.com).
