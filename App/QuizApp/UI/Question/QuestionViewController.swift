@@ -36,7 +36,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueCell(in: tableView)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         cell.textLabel?.text = options[indexPath.row]
         return cell
     }
@@ -55,12 +55,5 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let indexPaths = tableView.indexPathsForSelectedRows else { return [] }
         
         return indexPaths.map { options[$0.row] }
-    }
-    
-    private func dequeueCell(in tableView: UITableView) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
-            return cell
-        }
-        return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
     }
 }
