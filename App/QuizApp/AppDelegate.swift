@@ -8,7 +8,7 @@ import QuizEngine
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var game: Game<Question<String>, Set<String>, NavigationControllerRouter>?
+    var game: Game<NavigationControllerRouter>?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
