@@ -27,8 +27,9 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.allowsMultipleSelection = allowsMultipleSelection
         headerLabel.text = question
+        tableView.allowsMultipleSelection = allowsMultipleSelection
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
