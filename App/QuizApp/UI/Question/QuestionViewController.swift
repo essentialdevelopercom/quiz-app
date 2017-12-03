@@ -27,8 +27,9 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.allowsMultipleSelection = allowsMultipleSelection
         headerLabel.text = question
+        tableView.allowsMultipleSelection = allowsMultipleSelection
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +37,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueCell(in: tableView)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         cell.textLabel?.text = options[indexPath.row]
         return cell
     }
@@ -55,12 +56,5 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let indexPaths = tableView.indexPathsForSelectedRows else { return [] }
         
         return indexPaths.map { options[$0.row] }
-    }
-    
-    private func dequeueCell(in tableView: UITableView) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
-            return cell
-        }
-        return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
     }
 }
