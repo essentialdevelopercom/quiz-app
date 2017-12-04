@@ -4,18 +4,15 @@
 
 import Foundation
 
-class Flow <R: Router> {
-    typealias Question = R.Question
-    typealias Answer = R.Answer
-    
-    private let router: R
+class Flow <Question: Hashable, Answer> {
+    private let router: AnyRouter<Question, Answer>
     private let questions: [Question]
     private var answers: [Question: Answer] = [:]
     private var scoring: ([Question: Answer]) -> Int
     
-    init(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) {
+    init<R: Router>(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) where R.Question == Question, R.Answer == Answer {
         self.questions = questions
-        self.router = router
+        self.router = AnyRouter(router)
         self.scoring = scoring
     }
     
