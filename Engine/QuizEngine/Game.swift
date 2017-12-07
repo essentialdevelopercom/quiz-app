@@ -5,9 +5,9 @@
 import Foundation
 
 public class Game <Question, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
-    let flow: Flow<Question, Answer, R>
+    let flow: Flow<R>
     
-    init(flow: Flow<Question, Answer, R>) {
+    init(flow: Flow<R>) {
         self.flow = flow
     }
 }
