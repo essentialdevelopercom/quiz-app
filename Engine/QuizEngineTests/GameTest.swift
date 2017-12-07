@@ -9,12 +9,12 @@ import QuizEngine
 class GameTest: XCTestCase {
     
     let router = RouterSpy()
-    lazy var game = Game(questions: ["Q1", "Q2"], router: router, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+    var game: Game<String, String>!
     
     override func setUp() {
         super.setUp()
         
-        game.start()
+        game = startGame(questions: ["Q1", "Q2"], router: router, correctAnswers: ["Q1": "A1", "Q2": "A2"])
     }
         
     func test_startGame_answerZeroOutOfTwoCorrectly_scoresZero() {
