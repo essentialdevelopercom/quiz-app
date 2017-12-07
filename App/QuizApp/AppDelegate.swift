@@ -8,8 +8,8 @@ import QuizEngine
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var game: Game<Question<String>, Set<String>>?
-
+    var game: Game<NavigationControllerRouter>?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let question1 = Question.singleAnswer("What's Mike's nationality?")

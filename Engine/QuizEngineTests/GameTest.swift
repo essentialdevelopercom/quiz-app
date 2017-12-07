@@ -9,7 +9,7 @@ import QuizEngine
 class GameTest: XCTestCase {
     
     let router = RouterSpy()
-    var game: Game<String, String>!
+    var game: Game<RouterSpy>!
     
     override func setUp() {
         super.setUp()
