@@ -4,7 +4,7 @@
 
 import Foundation
 
-public class Game <R: Router> {
+public class Game <Question, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
     let flow: Flow<R>
     
     init(flow: Flow<R>) {
@@ -12,7 +12,7 @@ public class Game <R: Router> {
     }
 }
 
-public func startGame<R: Router>(questions: [R.Question], router: R, correctAnswers: [R.Question: R.Answer]) -> Game<R> where R.Answer: Equatable{
+public func startGame<Question, Answer: Equatable, R: Router>(questions: [Question], router: R, correctAnswers: [Question: Answer]) -> Game<Question, Answer, R> {
     let flow = Flow(questions: questions, router: router, scoring: { scoring($0, correctAnswers: correctAnswers) })
     flow.start()
     return Game(flow: flow)
