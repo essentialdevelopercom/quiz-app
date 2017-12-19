@@ -83,7 +83,7 @@ class QuestionViewControllerTest: XCTestCase {
                  selection: @escaping ([String]) -> Void = { _ in }
                  ) -> QuestionViewController {
         let sut = QuestionViewController(question: question, options: options, allowsMultipleSelection: allowsMultipleSelection, selection: selection)
-        _ = sut.view
+        sut.loadViewIfNeeded()
         return sut
     }
 
