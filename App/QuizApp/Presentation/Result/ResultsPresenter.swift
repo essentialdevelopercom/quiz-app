@@ -6,10 +6,9 @@ import Foundation
 import QuizEngine
 
 struct ResultsPresenter {
-    let result: Result<Question<String>, Set<String>>
+    let result: Result<Question<String>, [String]>
     let questions: [Question<String>]
-    let options: Dictionary<Question<String>, [String]>
-    let correctAnswers: Dictionary<Question<String>, Set<String>>
+    let correctAnswers: Dictionary<Question<String>, [String]>
     
     var title: String {
         return "Result"
@@ -30,20 +29,14 @@ struct ResultsPresenter {
         }
     }
     
-    private func presentableAnswer(_ question: Question<String>, _ userAnswer: Set<String>, _ correctAnswer: Set<String>) -> PresentableAnswer {
+    private func presentableAnswer(_ question: Question<String>, _ userAnswer: [String], _ correctAnswer: [String]) -> PresentableAnswer {
         switch question {
         case .singleAnswer(let value), .multipleAnswer(let value):
             return PresentableAnswer(
                 question: value,
-                answer: formattedAnswer(ordered(correctAnswer, for: question)),
-                wrongAnswer: formattedWrongAnswer(ordered(userAnswer, for: question), ordered(correctAnswer, for: question)))
+                answer: formattedAnswer(correctAnswer),
+                wrongAnswer: formattedWrongAnswer(userAnswer, correctAnswer))
         }
-    }
-    
-    private func ordered(_ answers: Set<String>, for question: Question<String>) -> [String] {
-        guard let options = options[question] else { return [] }
-        
-        return options.filter { answers.contains($0) }
     }
     
     private func formattedAnswer(_ answer: [String]) -> String {
