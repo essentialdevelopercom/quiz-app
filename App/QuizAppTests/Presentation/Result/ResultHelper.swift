@@ -2,13 +2,12 @@
 //  Copyright © 2017 Essential Developer. All rights reserved.
 //
 
-import QuizEngine
+@testable import QuizEngine
 
 extension Result: Hashable {
     
-    init(answers: [Question: Answer], score: Int) {
-        self.answers = answers
-        self.score = score
+	static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
+        return Result(answers: answers, score: score)
     }
     
     public var hashValue: Int {

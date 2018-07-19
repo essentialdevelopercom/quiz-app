@@ -79,7 +79,7 @@ class iOSViewControllerFactoryTest: XCTestCase {
         let userAnswers = [singleAnswerQuestion: Set(["A1"]), multipleAnswerQuestion: Set(["A1", "A2"])]
         let correctAnswers = [singleAnswerQuestion: Set(["A1"]), multipleAnswerQuestion: Set(["A1", "A2"])]
         let questions = [singleAnswerQuestion, multipleAnswerQuestion]
-        let result = Result(answers: userAnswers, score: 2)
+        let result = Result.make(answers: userAnswers, score: 2)
         let orderedOptions = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
         
         let presenter = ResultsPresenter(result: result, questions: questions, options: orderedOptions, correctAnswers: correctAnswers)
