@@ -38,6 +38,16 @@
                ReferencedContainer = "container:QuizApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "08CB6D851E672907003D96A9"
+               BuildableName = "QuizEngine_iOSTests.xctest"
+               BlueprintName = "QuizEngine_iOSTests"
+               ReferencedContainer = "container:../Engine/QuizEngine.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
