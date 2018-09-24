@@ -12,8 +12,6 @@
 		086816561E572137009359E4 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086816551E572137009359E4 /* Flow.swift */; };
 		088F0BC81E69B7B80078C62D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0BC71E69B7B80078C62D /* Question.swift */; };
 		088F0BC91E69B7B80078C62D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0BC71E69B7B80078C62D /* Question.swift */; };
-		088F0BCB1E69B7F10078C62D /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0BCA1E69B7F10078C62D /* QuestionTest.swift */; };
-		088F0BCC1E69B7F10078C62D /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0BCA1E69B7F10078C62D /* QuestionTest.swift */; };
 		08CB6D4D1E6714A5003D96A9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D4C1E6714A5003D96A9 /* Result.swift */; };
 		08CB6D4F1E6714C0003D96A9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D4E1E6714C0003D96A9 /* Router.swift */; };
 		08CB6D511E671581003D96A9 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D501E671581003D96A9 /* GameTest.swift */; };
@@ -54,7 +52,6 @@
 		086816531E571F88009359E4 /* FlowTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		086816551E572137009359E4 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		088F0BC71E69B7B80078C62D /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		088F0BCA1E69B7F10078C62D /* QuestionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		08CB6D4C1E6714A5003D96A9 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		08CB6D4E1E6714C0003D96A9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		08CB6D501E671581003D96A9 /* GameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 			children = (
 				086816491E571F2F009359E4 /* Info.plist */,
 				086816531E571F88009359E4 /* FlowTest.swift */,
-				088F0BCA1E69B7F10078C62D /* QuestionTest.swift */,
 				08CB6D501E671581003D96A9 /* GameTest.swift */,
 				08CB6D541E671736003D96A9 /* RouterSpy.swift */,
 			);
@@ -247,12 +243,12 @@
 				TargetAttributes = {
 					086816381E571F2F009359E4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					086816411E571F2F009359E4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					08CB6D7D1E672907003D96A9 = {
@@ -336,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				086816541E571F88009359E4 /* FlowTest.swift in Sources */,
-				088F0BCB1E69B7F10078C62D /* QuestionTest.swift in Sources */,
 				08CB6D511E671581003D96A9 /* GameTest.swift in Sources */,
 				08CB6D551E671736003D96A9 /* RouterSpy.swift in Sources */,
 			);
@@ -359,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CB6D981E67295C003D96A9 /* FlowTest.swift in Sources */,
-				088F0BCC1E69B7F10078C62D /* QuestionTest.swift in Sources */,
 				08CB6D991E67295C003D96A9 /* GameTest.swift in Sources */,
 				08CB6D9A1E67295C003D96A9 /* RouterSpy.swift in Sources */,
 			);
@@ -511,8 +505,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -533,8 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.essentialdeveloper.QuizEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -549,8 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.essentialdeveloper.QuizEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -564,8 +555,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.essentialdeveloper.QuizEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -586,8 +576,7 @@
 				PRODUCT_NAME = QuizEngine;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -609,8 +598,7 @@
 				PRODUCT_NAME = QuizEngine;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -627,8 +615,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.essentialdeveloper.QuizEngine-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -643,8 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.essentialdeveloper.QuizEngine-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
