@@ -20,7 +20,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         headerLabel.text = summary
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CorrectAnswerCell.self)
         tableView.register(WrongAnswerCell.self)
     }

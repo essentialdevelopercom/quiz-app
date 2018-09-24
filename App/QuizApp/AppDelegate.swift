@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var game: Game<Question<String>, [String], NavigationControllerRouter>?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let question1 = Question.singleAnswer("What's Mike's nationality?")
         let question2 = Question.multipleAnswer("What are Caio's nationalities?")
