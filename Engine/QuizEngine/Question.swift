@@ -11,9 +11,9 @@ public enum Question<T: Hashable> : Hashable {
     public var hashValue: Int {
         switch self {
         case .singleAnswer(let value):
-            return value.hashValue
+            return "singleAnswer".hashValue ^ value.hashValue
         case .multipleAnswer(let value):
-            return value.hashValue
+            return "multipleAnswer".hashValue ^ value.hashValue
         }
     }
 }
