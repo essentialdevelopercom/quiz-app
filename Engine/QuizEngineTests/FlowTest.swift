@@ -63,13 +63,13 @@ class FlowTest: XCTestCase {
     func test_start_withNoQuestions_routesToResult() {
         makeSUT(questions: []).start()
         
-        XCTAssertEqual(delegate.routedResult!.answers, [:])
+        XCTAssertEqual(delegate.handledResult!.answers, [:])
     }
     
     func test_start_withOneQuestions_doesNotRouteToResult() {
         makeSUT(questions: ["Q1"]).start()
         
-        XCTAssertNil(delegate.routedResult)
+        XCTAssertNil(delegate.handledResult)
     }
     
     func test_startAndAnswerFirstQuestion_withTwoQuestions_doesNotRouteToResult() {
@@ -78,7 +78,7 @@ class FlowTest: XCTestCase {
         
         delegate.answerCallback("A1")
         
-        XCTAssertNil(delegate.routedResult)
+        XCTAssertNil(delegate.handledResult)
     }
 
     func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_routesToResult() {
@@ -88,7 +88,7 @@ class FlowTest: XCTestCase {
         delegate.answerCallback("A1")
         delegate.answerCallback("A2")
         
-        XCTAssertEqual(delegate.routedResult!.answers, ["Q1": "A1", "Q2": "A2"])
+        XCTAssertEqual(delegate.handledResult!.answers, ["Q1": "A1", "Q2": "A2"])
     }
 
     func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_scores() {
@@ -98,7 +98,7 @@ class FlowTest: XCTestCase {
         delegate.answerCallback("A1")
         delegate.answerCallback("A2")
         
-        XCTAssertEqual(delegate.routedResult!.score, 10)
+        XCTAssertEqual(delegate.handledResult!.score, 10)
     }
 
     func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_scoresWithRightAnswers() {
@@ -137,7 +137,7 @@ class FlowTest: XCTestCase {
 	
 	private class DelegateSpy: Router, QuizDelegate {
 		var handledQuestions: [String] = []
-		var routedResult: Result<String, String>? = nil
+		var handledResult: Result<String, String>? = nil
 		
 		var answerCallback: (String) -> Void = { _ in }
 		
@@ -151,7 +151,7 @@ class FlowTest: XCTestCase {
 		}
 		
 		func handle(result: Result<String, String>) {
-			routedResult = result
+			handledResult = result
 		}
 		
 		func routeTo(result: Result<String, String>) {
