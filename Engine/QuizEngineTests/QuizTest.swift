@@ -21,25 +21,25 @@ class QuizTest: XCTestCase {
 		delegate.answerCallback("wrong")
 		delegate.answerCallback("wrong")
 		
-		XCTAssertEqual(delegate.routedResult!.score, 0)
+		XCTAssertEqual(delegate.handledResult!.score, 0)
 	}
 	
 	func test_startGame_answerOneOutOfTwoCorrectly_scoresOne() {
 		delegate.answerCallback("A1")
 		delegate.answerCallback("wrong")
 		
-		XCTAssertEqual(delegate.routedResult!.score, 1)
+		XCTAssertEqual(delegate.handledResult!.score, 1)
 	}
 	
 	func test_startGame_answerTwoOutOfTwoCorrectly_scoresTwo() {
 		delegate.answerCallback("A1")
 		delegate.answerCallback("A2")
 		
-		XCTAssertEqual(delegate.routedResult!.score, 2)
+		XCTAssertEqual(delegate.handledResult!.score, 2)
 	}
 	
 	private class DelegateSpy: Router {
-		var routedResult: Result<String, String>? = nil
+		var handledResult: Result<String, String>? = nil
 		
 		var answerCallback: (String) -> Void = { _ in }
 		
@@ -48,7 +48,7 @@ class QuizTest: XCTestCase {
 		}
 		
 		func routeTo(result: Result<String, String>) {
-			routedResult = result
+			handledResult = result
 		}
 	}
 	
