@@ -8,34 +8,34 @@ import QuizEngine
 
 class QuizTest: XCTestCase {
 	
-	private let router = RouterSpy()
+	private let delegate = RouterSpy()
 	private var game: Game<String, String, RouterSpy>!
 	
 	override func setUp() {
 		super.setUp()
 		
-		game = startGame(questions: ["Q1", "Q2"], router: router, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+		game = startGame(questions: ["Q1", "Q2"], router: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
 	}
 	
 	func test_startGame_answerZeroOutOfTwoCorrectly_scoresZero() {
-		router.answerCallback("wrong")
-		router.answerCallback("wrong")
+		delegate.answerCallback("wrong")
+		delegate.answerCallback("wrong")
 		
-		XCTAssertEqual(router.routedResult!.score, 0)
+		XCTAssertEqual(delegate.routedResult!.score, 0)
 	}
 	
 	func test_startGame_answerOneOutOfTwoCorrectly_scoresOne() {
-		router.answerCallback("A1")
-		router.answerCallback("wrong")
+		delegate.answerCallback("A1")
+		delegate.answerCallback("wrong")
 		
-		XCTAssertEqual(router.routedResult!.score, 1)
+		XCTAssertEqual(delegate.routedResult!.score, 1)
 	}
 	
 	func test_startGame_answerTwoOutOfTwoCorrectly_scoresTwo() {
-		router.answerCallback("A1")
-		router.answerCallback("A2")
+		delegate.answerCallback("A1")
+		delegate.answerCallback("A2")
 		
-		XCTAssertEqual(router.routedResult!.score, 2)
+		XCTAssertEqual(delegate.routedResult!.score, 2)
 	}
 	
 	private class RouterSpy: Router {
