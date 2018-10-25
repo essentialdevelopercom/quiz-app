@@ -17,21 +17,21 @@ class QuizTest: XCTestCase {
 		quiz = startGame(questions: ["Q1", "Q2"], router: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
 	}
 	
-	func test_startGame_answerZeroOutOfTwoCorrectly_scoresZero() {
+	func test_startQuiz_answerZeroOutOfTwoCorrectly_scoresZero() {
 		delegate.answerCallback("wrong")
 		delegate.answerCallback("wrong")
 		
 		XCTAssertEqual(delegate.handledResult!.score, 0)
 	}
 	
-	func test_startGame_answerOneOutOfTwoCorrectly_scoresOne() {
+	func test_startQuiz_answerOneOutOfTwoCorrectly_scoresOne() {
 		delegate.answerCallback("A1")
 		delegate.answerCallback("wrong")
 		
 		XCTAssertEqual(delegate.handledResult!.score, 1)
 	}
 	
-	func test_startGame_answerTwoOutOfTwoCorrectly_scoresTwo() {
+	func test_startQuiz_answerTwoOutOfTwoCorrectly_scoresTwo() {
 		delegate.answerCallback("A1")
 		delegate.answerCallback("A2")
 		
