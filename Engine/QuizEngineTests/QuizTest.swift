@@ -9,12 +9,12 @@ import QuizEngine
 class QuizTest: XCTestCase {
 	
 	private let delegate = DelegateSpy()
-	private var game: Game<String, String, DelegateSpy>!
+	private var quiz: Game<String, String, DelegateSpy>!
 	
 	override func setUp() {
 		super.setUp()
 		
-		game = startGame(questions: ["Q1", "Q2"], router: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+		quiz = startGame(questions: ["Q1", "Q2"], router: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
 	}
 	
 	func test_startGame_answerZeroOutOfTwoCorrectly_scoresZero() {
