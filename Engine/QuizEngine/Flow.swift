@@ -4,42 +4,42 @@
 
 import Foundation
 
-class Flow <R: QuizDelegate> {
-    typealias Question = R.Question
-    typealias Answer = R.Answer
+class Flow <Delegate: QuizDelegate> {
+    typealias Question = Delegate.Question
+    typealias Answer = Delegate.Answer
     
-    private let router: R
+    private let delegate: Delegate
     private let questions: [Question]
     private var answers: [Question: Answer] = [:]
     private var scoring: ([Question: Answer]) -> Int
     
-    init(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) {
+    init(questions: [Question], router: Delegate, scoring: @escaping ([Question: Answer]) -> Int) {
         self.questions = questions
-        self.router = router
+        self.delegate = router
         self.scoring = scoring
     }
     
     func start() {
-        routeToQuestion(at: questions.startIndex)
+        delegateQuestionHandling(at: questions.startIndex)
     }
     
-    private func routeToQuestion(at index: Int) {
+    private func delegateQuestionHandling(at index: Int) {
         if index < questions.endIndex {
             let question = questions[index]
-            router.handle(question: question, answerCallback: callback(for: question, at: index))
+            delegate.handle(question: question, answerCallback: callback(for: question, at: index))
         } else {
-            router.handle(result: result())
+            delegate.handle(result: result())
         }
     }
     
-    private func routeToQuestion(after index: Int) {
-        routeToQuestion(at: questions.index(after: index))
+    private func delegateQuestionHandling(after index: Int) {
+        delegateQuestionHandling(at: questions.index(after: index))
     }
     
     private func callback(for question: Question, at index: Int) -> (Answer) -> Void {
         return { [weak self] answer in
             self?.answers[question] = answer
-            self?.routeToQuestion(after: index)
+            self?.delegateQuestionHandling(after: index)
         }
     }
     
