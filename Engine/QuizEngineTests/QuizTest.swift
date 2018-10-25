@@ -8,8 +8,8 @@ import QuizEngine
 
 class QuizTest: XCTestCase {
 	
-	private let delegate = RouterSpy()
-	private var game: Game<String, String, RouterSpy>!
+	private let delegate = DelegateSpy()
+	private var game: Game<String, String, DelegateSpy>!
 	
 	override func setUp() {
 		super.setUp()
@@ -38,7 +38,7 @@ class QuizTest: XCTestCase {
 		XCTAssertEqual(delegate.routedResult!.score, 2)
 	}
 	
-	private class RouterSpy: Router {
+	private class DelegateSpy: Router {
 		var routedResult: Result<String, String>? = nil
 		
 		var answerCallback: (String) -> Void = { _ in }
