@@ -8,48 +8,38 @@ import QuizEngine
 
 class QuizTest: XCTestCase {
 	
-	private let delegate = DelegateSpy()
-	private var quiz: Quiz!
-	
-	override func setUp() {
-		super.setUp()
-		
-		quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
-	}
+	private var quiz: Quiz?
 	
 	func test_startQuiz_answerZeroOutOfTwoCorrectly_scoresZero() {
-		delegate.answerCallback("wrong")
-		delegate.answerCallback("wrong")
+		let delegate = DelegateSpy()
+
+		quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+
+		delegate.answerCompletion("A1")
+		delegate.answerCompletion("A2")
 		
-		XCTAssertEqual(delegate.handledResult!.score, 0)
+		XCTAssertEqual(delegate.completedQuizzes.count, 1)
+		assertEqual(delegate.completedQuizzes[0], [("Q1", "A1"), ("Q2", "A2")])
 	}
 	
-	func test_startQuiz_answerOneOutOfTwoCorrectly_scoresOne() {
-		delegate.answerCallback("A1")
-		delegate.answerCallback("wrong")
-		
-		XCTAssertEqual(delegate.handledResult!.score, 1)
+	private func assertEqual(_ a1: [(String, String)], _ a2: [(String, String)], file: StaticString = #file, line: UInt = #line) {
+		XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)
 	}
-	
-	func test_startQuiz_answerTwoOutOfTwoCorrectly_scoresTwo() {
-		delegate.answerCallback("A1")
-		delegate.answerCallback("A2")
-		
-		XCTAssertEqual(delegate.handledResult!.score, 2)
-	}
-	
+
 	private class DelegateSpy: QuizDelegate {
-		var handledResult: Result<String, String>? = nil
+		var completedQuizzes: [[(String, String)]] = []
+		var answerCompletion: (String) -> Void = { _ in }
 		
-		var answerCallback: (String) -> Void = { _ in }
-		
-		func answer(for: String, completion: @escaping (String) -> Void) {
-			self.answerCallback = completion
+		func answer(for question: String, completion: @escaping (String) -> Void) {
+			self.answerCompletion = completion
 		}
 		
-		func handle(result: Result<String, String>) {
-			handledResult = result
+		func didCompleteQuiz(withAnswers answers: [(question: String, answer: String)]) {
+			completedQuizzes.append(answers)
 		}
+		
+		func handle(result: Result<String, String>) {}
 	}
+
 	
 }
