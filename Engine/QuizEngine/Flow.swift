@@ -26,7 +26,7 @@ class Flow <Delegate: QuizDelegate> {
     private func delegateQuestionHandling(at index: Int) {
         if index < questions.endIndex {
             let question = questions[index]
-            delegate.answer(for: question, completion: callback(for: question, at: index))
+            delegate.answer(for: question, completion: answer(for: question, at: index))
         } else {
             delegate.handle(result: result())
         }
@@ -36,7 +36,7 @@ class Flow <Delegate: QuizDelegate> {
         delegateQuestionHandling(at: questions.index(after: index))
     }
     
-    private func callback(for question: Question, at index: Int) -> (Answer) -> Void {
+    private func answer(for question: Question, at index: Int) -> (Answer) -> Void {
         return { [weak self] answer in
             self?.answers[question] = answer
             self?.delegateQuestionHandling(after: index)
