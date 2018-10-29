@@ -11,34 +11,34 @@ class ScoreTest: XCTestCase {
 		XCTAssertEqual(BasicScore.score(for: [], comparingTo: []), 0)
 	}
 	
-	func test_oneWrongAnswer_scoresZero() {
-		XCTAssertEqual(BasicScore.score(for: ["wrong"], comparingTo: ["correct"]), 0)
+	func test_oneNonMatchingAnswer_scoresZero() {
+		XCTAssertEqual(BasicScore.score(for: ["not a match"], comparingTo: ["an answer"]), 0)
 	}
 	
-	func test_oneCorrectAnswer_scoresOne() {
-		XCTAssertEqual(BasicScore.score(for: ["correct"], comparingTo: ["correct"]), 1)
+	func test_oneMatchingAnswer_scoresOne() {
+		XCTAssertEqual(BasicScore.score(for: ["an answer"], comparingTo: ["an answer"]), 1)
 	}
 	
-	func test_oneCorrectAnswerOneWrong_scoresOne() {
+	func test_oneMatchingAnswerOneNonMatching_scoresOne() {
 		let score = BasicScore.score(
-			for: ["correct 1", "wrong"],
-			comparingTo: ["correct 1", "correct 2"])
+			for: ["an answer", "not a match"],
+			comparingTo: ["an answer", "another answer"])
 		
 		XCTAssertEqual(score, 1)
 	}
 
-	func test_twoCorrectAnswers_scoresTwo() {
+	func test_twoMatchingAnswers_scoresTwo() {
 		let score = BasicScore.score(
-			for: ["correct 1", "correct 2"],
-			comparingTo: ["correct 1", "correct 2"])
+			for: ["an answer", "another answer"],
+			comparingTo: ["an answer", "another answer"])
 		
 		XCTAssertEqual(score, 2)
 	}
 	
-	func test_withUnequalSizedData_twoCorrectAnswers_scoresTwo() {
+	func test_withTooManyAnswers_twoMatchingAnswers_scoresTwo() {
 		let score = BasicScore.score(
-			for: ["correct 1", "correct 2", "an extra answer"],
-			comparingTo: ["correct 1", "correct 2"])
+			for: ["an answer", "another answer", "an extra answer"],
+			comparingTo: ["an answer", "another answer"])
 		
 		XCTAssertEqual(score, 2)
 	}
