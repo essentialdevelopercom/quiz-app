@@ -35,6 +35,7 @@
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
 		08CB6DA01E672B8B003D96A9 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; };
 		08CB6DA11E672B8B003D96A9 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		088F0C031E69D2A50078C62D /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		088687491E64729700A19B60 /* QuizAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				08FCBAB521874A5600242F82 /* Scoring */,
 				085901801E69D3630010165E /* Routing */,
 				085901771E69D3430010165E /* Presentation */,
 				0859016D1E69D30C0010165E /* UI */,
@@ -333,6 +336,14 @@
 				08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FCBAB521874A5600242F82 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				08FCBAB621874A7100242F82 /* ScoreTest.swift */,
+			);
+			path = Scoring;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +477,7 @@
 				085901751E69D30C0010165E /* QuestionViewControllerTest.swift in Sources */,
 				085901741E69D30C0010165E /* TableViewHelpers.swift in Sources */,
 				0859017E1E69D3430010165E /* ResultHelper.swift in Sources */,
+				08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */,
 				085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */,
 				085901821E69D3630010165E /* NavigationControllerRouterTest.swift in Sources */,
 				0859017D1E69D3430010165E /* QuestionPresenterTest.swift in Sources */,
