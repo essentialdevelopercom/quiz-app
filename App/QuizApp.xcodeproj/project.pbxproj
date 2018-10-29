@@ -36,6 +36,7 @@
 		08CB6DA01E672B8B003D96A9 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; };
 		08CB6DA11E672B8B003D96A9 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
+		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
+		08FCBAB921874ACC00242F82 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		088687341E64729700A19B60 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				08FCBAB821874ABC00242F82 /* Scoring */,
 				088F0C021E69D2A50078C62D /* Routing */,
 				088F0BF91E69D27D0078C62D /* Presentation */,
 				088F0BE21E69D2350078C62D /* UI */,
@@ -346,6 +349,14 @@
 			path = Scoring;
 			sourceTree = "<group>";
 		};
+		08FCBAB821874ABC00242F82 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				08FCBAB921874ACC00242F82 /* BasicScore.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,6 +469,7 @@
 				088F0BF51E69D2350078C62D /* WrongAnswerCell.swift in Sources */,
 				088F0C011E69D27D0078C62D /* ResultsPresenter.swift in Sources */,
 				088F0BF31E69D2350078C62D /* CorrectAnswerCell.swift in Sources */,
+				08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */,
 				0830FF491E687182003E2F2B /* iOSViewControllerFactory.swift in Sources */,
 				088F0C001E69D27D0078C62D /* PresentableAnswer.swift in Sources */,
 				088687361E64729700A19B60 /* AppDelegate.swift in Sources */,
