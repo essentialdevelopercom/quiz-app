@@ -8,7 +8,7 @@ import XCTest
 class ScoreTest: XCTestCase {
 	
 	func test_noAnswers_scoresZero() {
-		XCTAssertEqual(BasicScore.score(for: []), 0)
+		XCTAssertEqual(BasicScore.score(for: [], comparingTo: []), 0)
 	}
 	
 	func test_oneWrongAnswer_scoresZero() {
@@ -16,7 +16,7 @@ class ScoreTest: XCTestCase {
 	}
 	
 	private class BasicScore {
-		static func score(for: [Any], comparingTo: [Any] = []) -> Int {
+		static func score(for: [Any], comparingTo: [Any]) -> Int {
 			return 0
 		}
 	}
