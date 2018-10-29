@@ -53,8 +53,6 @@ class QuizTest: XCTestCase {
 		func didCompleteQuiz(withAnswers answers: [(question: String, answer: String)]) {
 			completedQuizzes.append(answers)
 		}
-		
-		func handle(result: Result<String, String>) {}
 	}
 
 	
