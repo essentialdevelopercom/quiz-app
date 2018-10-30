@@ -9,10 +9,6 @@ import QuizEngine
 
 class iOSViewControllerFactoryTest: XCTestCase {
 
-    let singleAnswerQuestion = Question.singleAnswer("Q1")
-    let multipleAnswerQuestion = Question.multipleAnswer("Q1")
-    let options = ["A1", "A2"]
-
     func test_questionViewController_singleAnswer_createsControllerWithTitle() {
         let presenter = QuestionPresenter(questions: [singleAnswerQuestion, multipleAnswerQuestion], question: singleAnswerQuestion)
         XCTAssertEqual(makeQuestionController(question: singleAnswerQuestion).title, presenter.title)
@@ -67,11 +63,15 @@ class iOSViewControllerFactoryTest: XCTestCase {
 
     // MARK: Helpers
 	
-	func makeSUT(options: Dictionary<Question<String>, [String]> = [:], correctAnswers: [(Question<String>, [String])] = []) -> iOSViewControllerFactory {
+	private let singleAnswerQuestion = Question.singleAnswer("Q1")
+	private let multipleAnswerQuestion = Question.multipleAnswer("Q1")
+	private let options = ["A1", "A2"]
+
+	private func makeSUT(options: Dictionary<Question<String>, [String]> = [:], correctAnswers: [(Question<String>, [String])] = []) -> iOSViewControllerFactory {
 		return iOSViewControllerFactory(options: options, correctAnswers: correctAnswers)
 	}
     
-    func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
+    private func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
 		let sut = makeSUT(
 			options: [question: options],
 			correctAnswers: [(singleAnswerQuestion, []), (multipleAnswerQuestion, [])]
@@ -79,7 +79,7 @@ class iOSViewControllerFactoryTest: XCTestCase {
 		return sut.questionViewController(for: question, answerCallback: {_ in }) as! QuestionViewController
     }
     
-    func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
+    private func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
         let userAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
         let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
 		
