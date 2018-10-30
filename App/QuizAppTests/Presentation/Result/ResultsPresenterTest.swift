@@ -13,9 +13,7 @@ class ResultsPresenterTest: XCTestCase {
     let multipleAnswerQuestion = Question.multipleAnswer("Q2")
 
     func test_title_returnsFormattedTitle() {
-        let sut = ResultsPresenter(result: .make(), questions: [], correctAnswers: [:])
-        
-        XCTAssertEqual(sut.title, "Result")
+        XCTAssertEqual(makeSUT().title, "Result")
     }
     
     func test_summary_withTwoQuestionsAndScoreOne_returnsSummary() {
@@ -80,4 +78,9 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertNil(sut.presentableAnswers.last!.wrongAnswer)
     }
 
+	// MARK: - Helpers
+	
+	private func makeSUT() -> ResultsPresenter {
+		return ResultsPresenter(userAnswers: [], correctAnswers: [], scorer: { _, _ in 0 })
+	}
 }
