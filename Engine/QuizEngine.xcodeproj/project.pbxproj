@@ -138,13 +138,21 @@
 			isa = PBXGroup;
 			children = (
 				086816491E571F2F009359E4 /* Info.plist */,
+				08C97C2E2189F9CD00DCBA48 /* Helpers */,
 				086816531E571F88009359E4 /* FlowTest.swift */,
-				08266D37218717750078D2CC /* DelegateSpy.swift */,
-				08266D34218716B30078D2CC /* Assertions.swift */,
-				08CB6D501E671581003D96A9 /* DeprecatedGameTest.swift */,
 				087B1739218224D900EF41AB /* QuizTest.swift */,
+				08CB6D501E671581003D96A9 /* DeprecatedGameTest.swift */,
 			);
 			path = QuizEngineTests;
+			sourceTree = "<group>";
+		};
+		08C97C2E2189F9CD00DCBA48 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				08266D37218717750078D2CC /* DelegateSpy.swift */,
+				08266D34218716B30078D2CC /* Assertions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
