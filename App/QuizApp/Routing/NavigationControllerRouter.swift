@@ -30,7 +30,7 @@ class NavigationControllerRouter: Router, QuizDelegate {
 		}
 	}
 
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+    func routeTo(question: QuizEngine.Question<String>, answerCallback: @escaping ([String]) -> Void) {
         answer(for: question, completion: answerCallback)
     }
 
@@ -38,7 +38,7 @@ class NavigationControllerRouter: Router, QuizDelegate {
 		show(factory.resultsViewController(for: answers))
 	}
     
-    func routeTo(result: Result<Question<String>, [String]>) {
+    func routeTo(result: Result<QuizEngine.Question<String>, [String]>) {
         show(factory.resultsViewController(for: result))
     }
     
