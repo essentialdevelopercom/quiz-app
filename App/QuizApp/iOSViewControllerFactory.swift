@@ -56,17 +56,4 @@ final class iOSViewControllerFactory: ViewControllerFactory {
 		controller.title = presenter.title
 		return controller
 	}
-	
-    func resultsViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
-		let presenter = ResultsPresenter(
-			userAnswers: questions.map { question in
-				(question, result.answers[question]!)
-			},
-			correctAnswers: correctAnswers,
-			scorer: { _, _ in result.score }
-		)
-		let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
-		controller.title = presenter.title
-		return controller
-    }
 }
