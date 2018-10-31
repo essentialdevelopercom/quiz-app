@@ -13,7 +13,6 @@
 		085901751E69D30C0010165E /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901711E69D30C0010165E /* QuestionViewControllerTest.swift */; };
 		085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901731E69D30C0010165E /* ResultsViewControllerTest.swift */; };
 		0859017D1E69D3430010165E /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901791E69D3430010165E /* QuestionPresenterTest.swift */; };
-		0859017E1E69D3430010165E /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859017B1E69D3430010165E /* ResultHelper.swift */; };
 		0859017F1E69D3430010165E /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859017C1E69D3430010165E /* ResultsPresenterTest.swift */; };
 		085901821E69D3630010165E /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901811E69D3630010165E /* NavigationControllerRouterTest.swift */; };
 		088687361E64729700A19B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088687351E64729700A19B60 /* AppDelegate.swift */; };
@@ -70,7 +69,6 @@
 		085901711E69D30C0010165E /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		085901731E69D30C0010165E /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		085901791E69D3430010165E /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
-		0859017B1E69D3430010165E /* ResultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 		0859017C1E69D3430010165E /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
 		085901811E69D3630010165E /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		088687321E64729700A19B60 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +170,6 @@
 		0859017A1E69D3430010165E /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				0859017B1E69D3430010165E /* ResultHelper.swift */,
 				0859017C1E69D3430010165E /* ResultsPresenterTest.swift */,
 			);
 			path = Result;
@@ -488,7 +485,6 @@
 			files = (
 				085901751E69D30C0010165E /* QuestionViewControllerTest.swift in Sources */,
 				085901741E69D30C0010165E /* TableViewHelpers.swift in Sources */,
-				0859017E1E69D3430010165E /* ResultHelper.swift in Sources */,
 				08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */,
 				085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */,
 				085901821E69D3630010165E /* NavigationControllerRouterTest.swift in Sources */,
