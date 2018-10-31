@@ -13,21 +13,25 @@ class NavigationControllerRouter: Router {
         self.navigationController = navigationController
         self.factory = factory
     }
-    
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
-        switch question {
-        case .singleAnswer:
-            show(factory.questionViewController(for: question, answerCallback: answerCallback))
+	
+	func answer(for question: QuizEngine.Question<String>, completion: @escaping ([String]) -> Void) {
+		switch question {
+		case .singleAnswer:
+			show(factory.questionViewController(for: question, answerCallback: completion))
+			
+		case .multipleAnswer:
+			let button = UIBarButtonItem(title: "Submit", style: .done, target: nil, action: nil)
+			let buttonController = SubmitButtonController(button, completion)
+			let controller = factory.questionViewController(for: question, answerCallback: { selection in
+				buttonController.update(selection)
+			})
+			controller.navigationItem.rightBarButtonItem = button
+			show(controller)
+		}
+	}
 
-        case .multipleAnswer:
-            let button = UIBarButtonItem(title: "Submit", style: .done, target: nil, action: nil)
-            let buttonController = SubmitButtonController(button, answerCallback)
-            let controller = factory.questionViewController(for: question, answerCallback: { selection in
-                buttonController.update(selection)
-            })
-            controller.navigationItem.rightBarButtonItem = button
-            show(controller)
-        }
+    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+        answer(for: question, completion: answerCallback)
     }
     
     func routeTo(result: Result<Question<String>, [String]>) {
