@@ -30,23 +30,20 @@ public class Game <Question, Answer, R: Router> {
 
 @available(*, deprecated, message: "use Quiz.start instead")
 public func startGame<Question, Answer: Equatable, R: Router>(questions: [Question], router: R, correctAnswers: [Question: Answer]) -> Game<Question, Answer, R> where R.Question == Question, R.Answer == Answer {
-	let adapter = QuizDelegateToRouterAdapter(router, correctAnswers)
-    let quiz = Quiz.start(questions: questions, delegate: adapter, dataSource: adapter)
+	let delegateAdapter = QuizDelegateToRouterAdapter(router, correctAnswers)
+    let dataSourceAdapter = QuizDataSourceToRouterAdapter(router)
+    let quiz = Quiz.start(questions: questions, delegate: delegateAdapter, dataSource: dataSourceAdapter)
     return Game(quiz: quiz)
 }
 
 @available(*, deprecated, message: "remove along with the deprecated Game types")
-private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate & QuizDataSource where R.Answer: Equatable {
+private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate where R.Answer: Equatable {
 	private let router: R
 	private let correctAnswers: [R.Question: R.Answer]
 	
 	init(_ router: R, _ correctAnswers: [R.Question: R.Answer]) {
 		self.router = router
 		self.correctAnswers = correctAnswers
-	}
-	
-	func answer(for question: R.Question, completion: @escaping (R.Answer) -> Void) {
-		router.routeTo(question: question, answerCallback: completion)
 	}
 	
 	func didCompleteQuiz(withAnswers answers: [(question: R.Question, answer: R.Answer)]) {
@@ -65,4 +62,17 @@ private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate & QuizDataSou
 			return score + (correctAnswers[tuple.key] == tuple.value ? 1 : 0)
 		}
 	}
+}
+
+@available(*, deprecated, message: "remove along with the deprecated Game types")
+private class QuizDataSourceToRouterAdapter<R: Router>: QuizDataSource where R.Answer: Equatable {
+    private let router: R
+
+    init(_ router: R) {
+        self.router = router
+    }
+
+    func answer(for question: R.Question, completion: @escaping (R.Answer) -> Void) {
+        router.routeTo(question: question, answerCallback: completion)
+    }
 }
