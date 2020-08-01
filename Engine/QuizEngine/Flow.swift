@@ -26,8 +26,8 @@ final class Flow<Delegate: QuizDelegate, DataSource: QuizDataSource> {
     private func delegateQuestionHandling(at index: Int) {
         if index < questions.endIndex {
             let question = questions[index]
-            let answerCompletion = answer(for: question, at: index)
-            dataSource.answer(for: question as! DataSource.Question, completion: answerCompletion)
+            dataSource.answer(for: question as! DataSource.Question,
+                              completion: answer(for: question, at: index))
         } else {
 			delegate.didCompleteQuiz(withAnswers: answers)
         }
