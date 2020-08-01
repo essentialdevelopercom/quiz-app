@@ -5,7 +5,7 @@
 import Foundation
 import QuizEngine
 
-class DelegateSpy: QuizDelegate {
+class DelegateSpy: QuizDelegate, QuizDataSource {
 	var questionsAsked: [String] = []
 	var answerCompletions: [(String) -> Void] = []
 	

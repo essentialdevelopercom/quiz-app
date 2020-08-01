@@ -31,12 +31,12 @@ public class Game <Question, Answer, R: Router> {
 @available(*, deprecated, message: "use Quiz.start instead")
 public func startGame<Question, Answer: Equatable, R: Router>(questions: [Question], router: R, correctAnswers: [Question: Answer]) -> Game<Question, Answer, R> where R.Question == Question, R.Answer == Answer {
 	let adapter = QuizDelegateToRouterAdapter(router, correctAnswers)
-	let quiz = Quiz.start(questions: questions, delegate: adapter)
+    let quiz = Quiz.start(questions: questions, delegate: adapter, dataSource: adapter)
     return Game(quiz: quiz)
 }
 
 @available(*, deprecated, message: "remove along with the deprecated Game types")
-private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate where R.Answer: Equatable {
+private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate & QuizDataSource where R.Answer: Equatable {
 	private let router: R
 	private let correctAnswers: [R.Question: R.Answer]
 	

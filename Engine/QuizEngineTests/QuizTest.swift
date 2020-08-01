@@ -13,7 +13,7 @@ class QuizTest: XCTestCase {
 	func test_startQuiz_answersAllQuestions_completesWithAnswers() {
 		let delegate = DelegateSpy()
 
-		quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate)
+        quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate, dataSource: delegate)
 
 		delegate.answerCompletions[0]("A1")
 		delegate.answerCompletions[1]("A2")
@@ -25,7 +25,7 @@ class QuizTest: XCTestCase {
 	func test_startQuiz_answersAllQuestionsTwice_completesWithNewAnswers() {
 		let delegate = DelegateSpy()
 
-		quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate)
+        quiz = Quiz.start(questions: ["Q1", "Q2"], delegate: delegate, dataSource: delegate)
 
 		delegate.answerCompletions[0]("A1")
 		delegate.answerCompletions[1]("A2")
