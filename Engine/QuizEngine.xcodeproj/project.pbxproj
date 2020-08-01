@@ -29,6 +29,7 @@
 		08CB6D991E67295C003D96A9 /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D501E671581003D96A9 /* DeprecatedGameTest.swift */; };
 		08CB6D9B1E67296A003D96A9 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086816551E572137009359E4 /* Flow.swift */; };
 		08CB6D9E1E67296A003D96A9 /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D521E6716B3003D96A9 /* DeprecatedGame.swift */; };
+		8F23AB6824D6222A001E3465 /* QuizDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23AB6724D6222A001E3465 /* QuizDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		08CB6D521E6716B3003D96A9 /* DeprecatedGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeprecatedGame.swift; sourceTree = "<group>"; };
 		08CB6D7E1E672907003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CB6D861E672907003D96A9 /* QuizEngine_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngine_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F23AB6724D6222A001E3465 /* QuizDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				0868163D1E571F2F009359E4 /* Info.plist */,
 				086816551E572137009359E4 /* Flow.swift */,
 				087B1734218223B400EF41AB /* QuizDelegate.swift */,
+				8F23AB6724D6222A001E3465 /* QuizDataSource.swift */,
 				087B173F21822F8300EF41AB /* Quiz.swift */,
 				088F0BC71E69B7B80078C62D /* Question.swift */,
 				08CB6D521E6716B3003D96A9 /* DeprecatedGame.swift */,
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				088F0BC81E69B7B80078C62D /* Question.swift in Sources */,
+				8F23AB6824D6222A001E3465 /* QuizDataSource.swift in Sources */,
 				087B174021822F8300EF41AB /* Quiz.swift in Sources */,
 				086816561E572137009359E4 /* Flow.swift in Sources */,
 				08CB6D531E6716B3003D96A9 /* DeprecatedGame.swift in Sources */,
