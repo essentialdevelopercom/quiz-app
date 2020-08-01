@@ -5,7 +5,7 @@
 import UIKit
 import QuizEngine
 
-final class NavigationControllerRouter: QuizDelegate {
+final class NavigationControllerRouter: QuizDelegate, QuizDataSource {
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
     

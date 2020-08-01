@@ -30,6 +30,7 @@
 		08CB6D9B1E67296A003D96A9 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086816551E572137009359E4 /* Flow.swift */; };
 		08CB6D9E1E67296A003D96A9 /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB6D521E6716B3003D96A9 /* DeprecatedGame.swift */; };
 		8F23AB6824D6222A001E3465 /* QuizDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23AB6724D6222A001E3465 /* QuizDataSource.swift */; };
+		8FD55D4924D62669001C29E5 /* QuizDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23AB6724D6222A001E3465 /* QuizDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				088F0BC91E69B7B80078C62D /* Question.swift in Sources */,
+				8FD55D4924D62669001C29E5 /* QuizDataSource.swift in Sources */,
 				087B174121822F8300EF41AB /* Quiz.swift in Sources */,
 				08CB6D9B1E67296A003D96A9 /* Flow.swift in Sources */,
 				08CB6D9E1E67296A003D96A9 /* DeprecatedGame.swift in Sources */,
@@ -518,9 +520,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -540,9 +543,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
