@@ -4,7 +4,7 @@
 
 import Foundation
 
-final class Flow<Delegate: QuizDelegate, DataSource: QuizDataSource> {
+final class Flow<Delegate: QuizDelegate, DataSource: QuizDataSource> where Delegate.Question == DataSource.Question, Delegate.Answer == DataSource.Answer  {
     typealias Question = Delegate.Question
     typealias Answer = Delegate.Answer
     
@@ -26,7 +26,7 @@ final class Flow<Delegate: QuizDelegate, DataSource: QuizDataSource> {
     private func delegateQuestionHandling(at index: Int) {
         if index < questions.endIndex {
             let question = questions[index]
-            dataSource.answer(for: question as! DataSource.Question,
+            dataSource.answer(for: question,
                               completion: answer(for: question, at: index))
         } else {
 			delegate.didCompleteQuiz(withAnswers: answers)
@@ -39,8 +39,7 @@ final class Flow<Delegate: QuizDelegate, DataSource: QuizDataSource> {
     
     private func answer(for question: Question, at index: Int) -> (DataSource.Answer) -> Void {
         return { [weak self] answer in
-            let delegateAnswer = answer as! Delegate.Answer
-			self?.answers.replaceOrInsert((question, delegateAnswer), at: index)
+			self?.answers.replaceOrInsert((question, answer), at: index)
             self?.delegateQuestionHandling(after: index)
         }
     }
