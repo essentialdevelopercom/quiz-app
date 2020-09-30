@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0830FF471E6870F1003E2F2B /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FF461E6870F1003E2F2B /* iOSViewControllerFactoryTest.swift */; };
 		0830FF491E687182003E2F2B /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FF481E687182003E2F2B /* iOSViewControllerFactory.swift */; };
+		084D8AFA2524C17F0066643A /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D8AF92524C17F0066643A /* QuizEngine.framework */; };
+		084D8AFB2524C17F0066643A /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 084D8AF92524C17F0066643A /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		085901741E69D30C0010165E /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859016F1E69D30C0010165E /* TableViewHelpers.swift */; };
 		085901751E69D30C0010165E /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901711E69D30C0010165E /* QuestionViewControllerTest.swift */; };
 		085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901731E69D30C0010165E /* ResultsViewControllerTest.swift */; };
@@ -32,8 +34,6 @@
 		088F0C011E69D27D0078C62D /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0BFE1E69D27D0078C62D /* ResultsPresenter.swift */; };
 		088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C031E69D2A50078C62D /* NavigationControllerRouter.swift */; };
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
-		08CB6DA01E672B8B003D96A9 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; };
-		08CB6DA11E672B8B003D96A9 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
 /* End PBXBuildFile section */
@@ -49,13 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		08CB6DA21E672B8B003D96A9 /* Embed Frameworks */ = {
+		084D8AFC2524C17F0066643A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				08CB6DA11E672B8B003D96A9 /* QuizEngine.framework in Embed Frameworks */,
+				084D8AFB2524C17F0066643A /* QuizEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +65,7 @@
 /* Begin PBXFileReference section */
 		0830FF461E6870F1003E2F2B /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		0830FF481E687182003E2F2B /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
+		084D8AF92524C17F0066643A /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0859016F1E69D30C0010165E /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		085901711E69D30C0010165E /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		085901731E69D30C0010165E /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
@@ -102,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08CB6DA01E672B8B003D96A9 /* QuizEngine.framework in Frameworks */,
+				084D8AFA2524C17F0066643A /* QuizEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +334,7 @@
 		08CB6DA31E672B92003D96A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				084D8AF92524C17F0066643A /* QuizEngine.framework */,
 				08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */,
 			);
 			name = Frameworks;
@@ -364,7 +366,7 @@
 				0886872E1E64729700A19B60 /* Sources */,
 				0886872F1E64729700A19B60 /* Frameworks */,
 				088687301E64729700A19B60 /* Resources */,
-				08CB6DA21E672B8B003D96A9 /* Embed Frameworks */,
+				084D8AFC2524C17F0066643A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,7 +402,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Essential Developer";
 				TargetAttributes = {
 					088687311E64729700A19B60 = {
@@ -418,10 +420,9 @@
 			};
 			buildConfigurationList = 0886872D1E64729700A19B60 /* Build configuration list for PBXProject "QuizApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -521,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -541,6 +543,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -565,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -579,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -599,6 +603,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -617,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
