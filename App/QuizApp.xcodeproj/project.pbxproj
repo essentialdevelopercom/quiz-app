@@ -20,6 +20,8 @@
 		085B5CED25389D5800C370FA /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */; };
 		085B5CF02538A18E00C370FA /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CEF2538A18E00C370FA /* QuestionHeader.swift */; };
 		085B5CF32538A22C00C370FA /* SingleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */; };
+		085B5CF82538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CF72538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift */; };
+		085B5CFB2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CFA2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift */; };
 		088687361E64729700A19B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088687351E64729700A19B60 /* AppDelegate.swift */; };
 		0886873D1E64729700A19B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0886873C1E64729700A19B60 /* Assets.xcassets */; };
 		088687401E64729700A19B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0886873E1E64729700A19B60 /* LaunchScreen.storyboard */; };
@@ -78,6 +80,8 @@
 		085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 		085B5CEF2538A18E00C370FA /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
 		085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextSelectionCell.swift; sourceTree = "<group>"; };
+		085B5CF72538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
+		085B5CFA2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		088687321E64729700A19B60 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088687351E64729700A19B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0886873C1E64729700A19B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 			children = (
 				088687351E64729700A19B60 /* AppDelegate.swift */,
 				0830FF481E687182003E2F2B /* iOSUIKitViewControllerFactory.swift */,
+				085B5CFA2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift */,
 				0886873E1E64729700A19B60 /* LaunchScreen.storyboard */,
 				0886873C1E64729700A19B60 /* Assets.xcassets */,
 				088687411E64729700A19B60 /* Info.plist */,
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				0830FF461E6870F1003E2F2B /* iOSUIKitViewControllerFactoryTest.swift */,
+				085B5CF72538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift */,
 				0886874C1E64729700A19B60 /* Info.plist */,
 			);
 			name = Main;
@@ -503,6 +509,7 @@
 				088F0BF31E69D2350078C62D /* CorrectAnswerCell.swift in Sources */,
 				08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */,
 				0830FF491E687182003E2F2B /* iOSUIKitViewControllerFactory.swift in Sources */,
+				085B5CFB2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				085B5CF32538A22C00C370FA /* SingleTextSelectionCell.swift in Sources */,
 				088F0C001E69D27D0078C62D /* PresentableAnswer.swift in Sources */,
 				088687361E64729700A19B60 /* AppDelegate.swift in Sources */,
@@ -525,6 +532,7 @@
 				085901741E69D30C0010165E /* TableViewHelpers.swift in Sources */,
 				08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */,
 				085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */,
+				085B5CF82538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */,
 				085901821E69D3630010165E /* NavigationControllerRouterTest.swift in Sources */,
 				0859017D1E69D3430010165E /* QuestionPresenterTest.swift in Sources */,
 				0830FF471E6870F1003E2F2B /* iOSUIKitViewControllerFactoryTest.swift in Sources */,
