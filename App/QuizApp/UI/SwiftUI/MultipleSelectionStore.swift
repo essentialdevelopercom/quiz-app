@@ -29,7 +29,7 @@ struct MultipleSelectionOption {
     let text: String
     var isSelected = false
     
-    mutating func select() {
+    mutating func toggleSelection() {
         isSelected.toggle()
     }
 }
