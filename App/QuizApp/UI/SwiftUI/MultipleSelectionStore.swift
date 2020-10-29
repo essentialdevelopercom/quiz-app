@@ -8,7 +8,7 @@ struct MultipleSelectionStore {
     var options: [MultipleSelectionOption]
     
     var canSubmit: Bool {
-        !options.filter(\.isSelected).isEmpty
+        options.contains { $0.isSelected }
     }
     
     private let handler: ([String]) -> Void
