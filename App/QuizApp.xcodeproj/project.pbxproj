@@ -41,6 +41,8 @@
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
 		08C839CA254B12C80049B57A /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839C9254B12C80049B57A /* MultipleSelectionStoreTests.swift */; };
 		08C839CE254B17510049B57A /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839CD254B17510049B57A /* MultipleSelectionStore.swift */; };
+		08C839D1254B178B0049B57A /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */; };
+		08C839D4254B17D20049B57A /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,8 @@
 		088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		08C839C9254B12C80049B57A /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
 		08C839CD254B17510049B57A /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
+		08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
+		08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		08FCBAB921874ACC00242F82 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */,
 				085B5CEF2538A18E00C370FA /* QuestionHeader.swift */,
 				08C839CD254B17510049B57A /* MultipleSelectionStore.swift */,
+				08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */,
+				08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				0830FF491E687182003E2F2B /* iOSUIKitViewControllerFactory.swift in Sources */,
 				085B5CFB2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				085B5CF32538A22C00C370FA /* SingleTextSelectionCell.swift in Sources */,
+				08C839D1254B178B0049B57A /* MultipleAnswerQuestion.swift in Sources */,
 				088F0C001E69D27D0078C62D /* PresentableAnswer.swift in Sources */,
 				088687361E64729700A19B60 /* AppDelegate.swift in Sources */,
 				085B5CED25389D5800C370FA /* SingleAnswerQuestion.swift in Sources */,
@@ -534,6 +541,7 @@
 				088F0BF11E69D2350078C62D /* QuestionViewController.swift in Sources */,
 				088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */,
 				088F0BF71E69D2350078C62D /* ResultsViewController.swift in Sources */,
+				08C839D4254B17D20049B57A /* MultipleTextSelectionCell.swift in Sources */,
 				088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */,
 				085B5CF02538A18E00C370FA /* QuestionHeader.swift in Sources */,
 			);
