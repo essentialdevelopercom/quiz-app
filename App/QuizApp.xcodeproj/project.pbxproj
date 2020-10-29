@@ -40,6 +40,7 @@
 		088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C031E69D2A50078C62D /* NavigationControllerRouter.swift */; };
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
 		08C839CA254B12C80049B57A /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839C9254B12C80049B57A /* MultipleSelectionStoreTests.swift */; };
+		08C839CE254B17510049B57A /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C839CD254B17510049B57A /* MultipleSelectionStore.swift */; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		088F0C031E69D2A50078C62D /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		08C839C9254B12C80049B57A /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
+		08C839CD254B17510049B57A /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		08FCBAB921874ACC00242F82 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */,
 				085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */,
 				085B5CEF2538A18E00C370FA /* QuestionHeader.swift */,
+				08C839CD254B17510049B57A /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			files = (
 				088F0BF51E69D2350078C62D /* WrongAnswerCell.swift in Sources */,
 				088F0C011E69D27D0078C62D /* ResultsPresenter.swift in Sources */,
+				08C839CE254B17510049B57A /* MultipleSelectionStore.swift in Sources */,
 				088F0BF31E69D2350078C62D /* CorrectAnswerCell.swift in Sources */,
 				08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */,
 				0830FF491E687182003E2F2B /* iOSUIKitViewControllerFactory.swift in Sources */,
