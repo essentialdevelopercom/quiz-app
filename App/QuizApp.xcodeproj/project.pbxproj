@@ -204,12 +204,7 @@
 		085B5CEB25389D3F00C370FA /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */,
-				085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */,
-				085B5CEF2538A18E00C370FA /* QuestionHeader.swift */,
-				08C839CD254B17510049B57A /* MultipleSelectionStore.swift */,
-				08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */,
-				08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */,
+				08D50F1B25599FD50011D793 /* Question */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -397,6 +392,19 @@
 				085901721E69D30C0010165E /* Result */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		08D50F1B25599FD50011D793 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */,
+				085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */,
+				085B5CEF2538A18E00C370FA /* QuestionHeader.swift */,
+				08C839CD254B17510049B57A /* MultipleSelectionStore.swift */,
+				08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */,
+				08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 		08FCBAB521874A5600242F82 /* Scoring */ = {
