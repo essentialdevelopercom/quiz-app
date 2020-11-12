@@ -11,14 +11,16 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
     
     private let options: Dictionary<Question<String>, [String]>
     private let correctAnswers: Answers
-    
+    private let playAgain: () -> Void
+	
     private var questions: [Question<String>] {
         return correctAnswers.map { $0.question }
     }
     
-    init(options: Dictionary<Question<String>, [String]>, correctAnswers: Answers) {
+	init(options: Dictionary<Question<String>, [String]>, correctAnswers: Answers, playAgain: @escaping () -> Void) {
         self.options = options
         self.correctAnswers = correctAnswers
+		self.playAgain = playAgain
     }
     
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -56,8 +58,12 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
             correctAnswers: correctAnswers,
             scorer: BasicScore.score
         )
-        let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
-        controller.title = presenter.title
-        return controller
+
+		return UIHostingController(
+			rootView: ResultView(
+				title: presenter.title,
+				summary: presenter.summary,
+				answers: presenter.presentableAnswers,
+				playAgain: playAgain))
     }
 }
