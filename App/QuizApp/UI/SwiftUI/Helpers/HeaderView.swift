@@ -9,17 +9,21 @@ struct HeaderView: View {
     let subtitle: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16.0) {
-            Text(title)
-                .font(.headline)
-                .fontWeight(.medium)
-                .foregroundColor(Color.blue)
-                .padding(.top)
-            
-            Text(subtitle)
-                .font(.largeTitle)
-                .fontWeight(.medium)
-        }.padding()
+		HStack {
+			VStack(alignment: .leading, spacing: 16.0) {
+				Text(title)
+					.font(.headline)
+					.fontWeight(.medium)
+					.foregroundColor(Color.blue)
+					.padding(.top)
+				
+				Text(subtitle)
+					.font(.largeTitle)
+					.fontWeight(.medium)
+			}
+			
+			Spacer()
+		}.padding()
     }
 }
 
