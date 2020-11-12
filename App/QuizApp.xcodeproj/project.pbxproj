@@ -19,7 +19,7 @@
 		0859017F1E69D3430010165E /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859017C1E69D3430010165E /* ResultsPresenterTest.swift */; };
 		085901821E69D3630010165E /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901811E69D3630010165E /* NavigationControllerRouterTest.swift */; };
 		085B5CED25389D5800C370FA /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */; };
-		085B5CF02538A18E00C370FA /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CEF2538A18E00C370FA /* QuestionHeader.swift */; };
+		085B5CF02538A18E00C370FA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CEF2538A18E00C370FA /* HeaderView.swift */; };
 		085B5CF32538A22C00C370FA /* SingleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */; };
 		085B5CF82538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CF72538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		085B5CFB2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B5CFA2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift */; };
@@ -84,7 +84,7 @@
 		0859017C1E69D3430010165E /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
 		085901811E69D3630010165E /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
-		085B5CEF2538A18E00C370FA /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
+		085B5CEF2538A18E00C370FA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextSelectionCell.swift; sourceTree = "<group>"; };
 		085B5CF72538A47900C370FA /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		085B5CFA2538A4A500C370FA /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -140,6 +140,7 @@
 		0839033A255AE46900811D54 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				085B5CEF2538A18E00C370FA /* HeaderView.swift */,
 				0839033C255AE4F300811D54 /* RoundedButton.swift */,
 			);
 			path = Helpers;
@@ -418,7 +419,6 @@
 			children = (
 				085B5CEC25389D5800C370FA /* SingleAnswerQuestion.swift */,
 				085B5CF22538A22C00C370FA /* SingleTextSelectionCell.swift */,
-				085B5CEF2538A18E00C370FA /* QuestionHeader.swift */,
 				08C839CD254B17510049B57A /* MultipleSelectionStore.swift */,
 				08C839D0254B178B0049B57A /* MultipleAnswerQuestion.swift */,
 				08C839D3254B17D20049B57A /* MultipleTextSelectionCell.swift */,
@@ -571,7 +571,7 @@
 				088F0BF71E69D2350078C62D /* ResultsViewController.swift in Sources */,
 				08C839D4254B17D20049B57A /* MultipleTextSelectionCell.swift in Sources */,
 				088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */,
-				085B5CF02538A18E00C370FA /* QuestionHeader.swift in Sources */,
+				085B5CF02538A18E00C370FA /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
