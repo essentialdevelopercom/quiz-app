@@ -51,7 +51,8 @@ struct ResultView_Previews: PreviewProvider {
 						.init(question: "What's the answer to question #003?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
 						.init(question: "What's the answer to question #004?", answer: "A correct answer", wrongAnswer: nil),
 						.init(question: "What's the answer to question #005?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
-				], playAgain: { playAgainCount += 1 })
+					],
+					playAgain: { playAgainCount += 1 })
 				
 				Text("Play again count: \(playAgainCount)")
 			}
