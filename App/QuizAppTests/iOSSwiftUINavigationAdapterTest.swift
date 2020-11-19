@@ -7,7 +7,7 @@ import XCTest
 import QuizEngine
 @testable import QuizApp
 
-class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
+class iOSSwiftUINavigationAdapterTest: XCTestCase {
 
     func test_questionViewController_singleAnswer_createsControllerWithTitle() throws {
         let presenter = QuestionPresenter(questions: questions, question: singleAnswerQuestion)
@@ -90,7 +90,31 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 		view.playAgain()
 		XCTAssertEqual(playAgainCount, 2)
 	}
+	
+	func test_answerForQuestion_replacesNavigationStack() {
+		let (sut, navigation) = makeSUT()
+		
+		sut.answer(for: singleAnswerQuestion) { _ in }
+		XCTAssertEqual(navigation.viewControllers.count, 1)
+		XCTAssertTrue(navigation.viewControllers.first is UIHostingController<SingleAnswerQuestion>)
 
+		sut.answer(for: multipleAnswerQuestion) { _ in }
+		XCTAssertEqual(navigation.viewControllers.count, 1)
+		XCTAssertTrue(navigation.viewControllers.first is UIHostingController<MultipleAnswerQuestion>)
+	}
+	
+	func test_didCompleteQuiz_replacesNavigationStack() {
+		let (sut, navigation) = makeSUT()
+		
+		sut.didCompleteQuiz(withAnswers: correctAnswers)
+		XCTAssertEqual(navigation.viewControllers.count, 1)
+		XCTAssertTrue(navigation.viewControllers.first is UIHostingController<ResultView>)
+
+		sut.didCompleteQuiz(withAnswers: correctAnswers)
+		XCTAssertEqual(navigation.viewControllers.count, 1)
+		XCTAssertTrue(navigation.viewControllers.first is UIHostingController<ResultView>)
+	}
+		
     // MARK: Helpers
     
     private var singleAnswerQuestion: Question<String> { .singleAnswer("Q1") }
@@ -109,37 +133,47 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A4", "A5"])]
     }
 
-	private func makeSUT(playAgain: @escaping () -> Void = {}) -> iOSSwiftUIViewControllerFactory {
-		return iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers, playAgain: playAgain)
+	private class NonAnimatedNavigationController: UINavigationController {
+		override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+			super.setViewControllers(viewControllers, animated: false)
+		}
+		
+		override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+			super.pushViewController(viewController, animated: false)
+		}
+	}
+
+	private func makeSUT(playAgain: @escaping () -> Void = {}) -> (iOSSwiftUINavigationAdapter, NonAnimatedNavigationController) {
+		let navigation = NonAnimatedNavigationController()
+		let sut = iOSSwiftUINavigationAdapter(navigation: navigation, options: options, correctAnswers: correctAnswers, playAgain: playAgain)
+		return (sut, navigation)
     }
     
     private func makeSingleAnswerQuestion(
         answerCallback: @escaping ([String]) -> Void = { _ in }
     ) -> SingleAnswerQuestion? {
-        let sut = makeSUT()
-        let controller = sut.questionViewController(
-            for: singleAnswerQuestion,
-            answerCallback: answerCallback
-        ) as? UIHostingController<SingleAnswerQuestion>
+        let (sut, navigation) = makeSUT()
+		sut.answer(for: singleAnswerQuestion, completion: answerCallback)
+        
+		let controller = navigation.topViewController as? UIHostingController<SingleAnswerQuestion>
         return controller?.rootView
     }
 
     private func makeMultipleAnswerQuestion(
         answerCallback: @escaping ([String]) -> Void = { _ in }
     ) -> MultipleAnswerQuestion? {
-        let sut = makeSUT()
-        let controller = sut.questionViewController(
-            for: multipleAnswerQuestion,
-            answerCallback: answerCallback
-        ) as? UIHostingController<MultipleAnswerQuestion>
+		let (sut, navigation) = makeSUT()
+		sut.answer(for: multipleAnswerQuestion, completion: answerCallback)
+
+		let controller = navigation.topViewController as? UIHostingController<MultipleAnswerQuestion>
         return controller?.rootView
     }
     
 	private func makeResults(playAgain: @escaping () -> Void = {}) -> (view: ResultView, presenter: ResultsPresenter)? {
-		let sut = makeSUT(playAgain: playAgain)
-        let controller = sut.resultsViewController(
-			for: correctAnswers
-		) as? UIHostingController<ResultView>
+		let (sut, navigation) = makeSUT(playAgain: playAgain)
+		sut.didCompleteQuiz(withAnswers: correctAnswers)
+		
+		let controller = navigation.topViewController as? UIHostingController<ResultView>
         let presenter = ResultsPresenter(
             userAnswers: correctAnswers,
             correctAnswers: correctAnswers,
