@@ -27,7 +27,7 @@ class ScoreTest: XCTestCase {
 		
 		XCTAssertEqual(score, 1)
 	}
-
+	
 	func test_twoMatchingAnswers_scoresTwo() {
 		let score = BasicScore.score(
 			for: ["an answer", "another answer"],
@@ -43,7 +43,7 @@ class ScoreTest: XCTestCase {
 		
 		XCTAssertEqual(score, 2)
 	}
-
+	
 	func test_withTooManyCorrectAnswers_oneMatchingAnswers_scoresOne() {
 		let score = BasicScore.score(
 			for: ["not matching", "another answer"],

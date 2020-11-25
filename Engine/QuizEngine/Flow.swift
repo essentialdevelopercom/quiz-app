@@ -5,41 +5,41 @@
 import Foundation
 
 final class Flow<Delegate: QuizDelegate> {
-    typealias Question = Delegate.Question
-    typealias Answer = Delegate.Answer
-    
-    private let delegate: Delegate
-    private let questions: [Question]
+	typealias Question = Delegate.Question
+	typealias Answer = Delegate.Answer
+	
+	private let delegate: Delegate
+	private let questions: [Question]
 	private var answers: [(Question, Answer)] = []
 	
 	init(questions: [Question], delegate: Delegate) {
-        self.questions = questions
-        self.delegate = delegate
-    }
-    
-    func start() {
-        delegateQuestionHandling(at: questions.startIndex)
-    }
-    
-    private func delegateQuestionHandling(at index: Int) {
-        if index < questions.endIndex {
-            let question = questions[index]
-            delegate.answer(for: question, completion: answer(for: question, at: index))
-        } else {
+		self.questions = questions
+		self.delegate = delegate
+	}
+	
+	func start() {
+		delegateQuestionHandling(at: questions.startIndex)
+	}
+	
+	private func delegateQuestionHandling(at index: Int) {
+		if index < questions.endIndex {
+			let question = questions[index]
+			delegate.answer(for: question, completion: answer(for: question, at: index))
+		} else {
 			delegate.didCompleteQuiz(withAnswers: answers)
-        }
-    }
-    
-    private func delegateQuestionHandling(after index: Int) {
-        delegateQuestionHandling(at: questions.index(after: index))
-    }
-    
-    private func answer(for question: Question, at index: Int) -> (Answer) -> Void {
-        return { [weak self] answer in
+		}
+	}
+	
+	private func delegateQuestionHandling(after index: Int) {
+		delegateQuestionHandling(at: questions.index(after: index))
+	}
+	
+	private func answer(for question: Question, at index: Int) -> (Answer) -> Void {
+		return { [weak self] answer in
 			self?.answers.replaceOrInsert((question, answer), at: index)
-            self?.delegateQuestionHandling(after: index)
-        }
-    }
+			self?.delegateQuestionHandling(after: index)
+		}
+	}
 }
 
 private extension Array {

@@ -10,7 +10,7 @@ struct ResultView: View {
 	let answers: [PresentableAnswer]
 	let playAgain: () -> Void
 	
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading, spacing: 0.0) {
 			HeaderView(title: title, subtitle: summary)
 			
@@ -23,11 +23,11 @@ struct ResultView: View {
 			RoundedButton(title: "Play again", action: playAgain)
 				.padding()
 		}
-    }
+	}
 }
 
 struct ResultView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		Group {
 			ResultTestView()
 			
@@ -35,7 +35,7 @@ struct ResultView_Previews: PreviewProvider {
 				.preferredColorScheme(.dark)
 				.environment(\.sizeCategory, .extraExtraExtraLarge)
 		}
-    }
+	}
 	
 	struct ResultTestView: View {
 		@State var playAgainCount = 0
