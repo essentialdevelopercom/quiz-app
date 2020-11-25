@@ -244,6 +244,7 @@
 				088687331E64729700A19B60 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		088687331E64729700A19B60 /* Products */ = {
 			isa = PBXGroup;

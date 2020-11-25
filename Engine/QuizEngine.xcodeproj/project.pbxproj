@@ -70,6 +70,7 @@
 				0868163A1E571F2F009359E4 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		0868163A1E571F2F009359E4 /* Products */ = {
 			isa = PBXGroup;

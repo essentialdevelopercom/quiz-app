@@ -26,7 +26,7 @@ struct ResultAnswerCell: View {
 }
 
 struct ResultAnswerCell_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		Group {
 			ResultAnswerCell(model: .init(question: "A question", answer: "A correct answer", wrongAnswer: "A wrong answer"))
 				.previewLayout(.sizeThatFits)
@@ -34,5 +34,5 @@ struct ResultAnswerCell_Previews: PreviewProvider {
 			ResultAnswerCell(model: .init(question: "A question", answer: "A correct answer", wrongAnswer: nil))
 				.previewLayout(.sizeThatFits)
 		}
-    }
+	}
 }
