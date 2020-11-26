@@ -26,7 +26,7 @@ class QuizNavigationStore: ObservableObject {
 struct QuizNavigationView: View {
 	@ObservedObject var store: QuizNavigationStore
 	
-    var body: some View {
+	var body: some View {
 		store.view
 			.transition(
 				AnyTransition
@@ -34,11 +34,11 @@ struct QuizNavigationView: View {
 					.combined(with: .move(edge: .trailing))
 			)
 			.id(UUID())
-    }
+	}
 }
 
 struct QuizNavigationView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		QuizNavigationView(store: QuizNavigationStore())
-    }
+	}
 }
