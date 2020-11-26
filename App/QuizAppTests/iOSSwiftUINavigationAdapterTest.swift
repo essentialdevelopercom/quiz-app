@@ -111,6 +111,25 @@ class iOSSwiftUINavigationAdapterTest: XCTestCase {
 		XCTAssertNotNil(navigation.resultCurrentView)
 	}
 	
+	func test_publishesNavigationChanges() {
+		let (sut, navigation) = makeSUT()
+		var navigationChangeCount = 0
+		let cancellable = navigation.objectWillChange.sink { navigationChangeCount += 1 }
+		
+		XCTAssertEqual(navigationChangeCount, 0)
+		
+		sut.answer(for: singleAnswerQuestion) { _ in }
+		XCTAssertEqual(navigationChangeCount, 1)
+		
+		sut.answer(for: multipleAnswerQuestion) { _ in }
+		XCTAssertEqual(navigationChangeCount, 2)
+
+		sut.didCompleteQuiz(withAnswers: correctAnswers)
+		XCTAssertEqual(navigationChangeCount, 3)
+		
+		cancellable.cancel()
+	}
+	
 	// MARK: Helpers
 	
 	private var singleAnswerQuestion: Question<String> { .singleAnswer("Q1") }
