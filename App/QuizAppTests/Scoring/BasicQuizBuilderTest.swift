@@ -95,31 +95,25 @@ class BasicQuizBuilderTest: XCTestCase {
     }
 	
 	func test_initWithSingleAnswerQuestion_duplicateOptions_throw() throws {
-		XCTAssertThrowsError(
+		assert(
 			try BasicQuizBuilder(
 				singleAnswerQuestion: "q1",
 				options: NonEmptyOptions(head: "o1", tail: ["o1", "o3"]),
-				answer: "o1")
-		) { error in
-			XCTAssertEqual(
-				error as? BasicQuizBuilder.AddingError,
-				BasicQuizBuilder.AddingError.duplicateOptions(["o1", "o1", "o3"])
-			)
-		}
+				answer: "o1"
+			),
+			throws: .duplicateOptions(["o1", "o1", "o3"])
+		)
 	}
 	
 	func test_initWithSingleAnswerQuestion_missingAnswerInOptions_throw() throws {
-		XCTAssertThrowsError(
+		assert(
 			try BasicQuizBuilder(
 				singleAnswerQuestion: "q1",
 				options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
-				answer: "o4")
-		) { error in
-			XCTAssertEqual(
-				error as? BasicQuizBuilder.AddingError,
-				BasicQuizBuilder.AddingError.missingAnswerInOptions(answer: ["o4"], options: ["o1", "o2", "o3"])
-			)
-		}
+				answer: "o4"
+			),
+			throws: .missingAnswerInOptions(answer: ["o4"], options: ["o1", "o2", "o3"])
+		)
 	}
 	
 	func test_addSingleAnswerQuestion() throws {
@@ -152,17 +146,14 @@ class BasicQuizBuilderTest: XCTestCase {
 			options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
 			answer: "o1")
 
-		XCTAssertThrowsError(
+		assert(
 			try sut.add(
 				singleAnswerQuestion: "q2",
 				options: NonEmptyOptions(head: "o3", tail: ["o3", "o5"]),
-				answer: "o3")
-		) { error in
-			XCTAssertEqual(
-				error as? BasicQuizBuilder.AddingError,
-				BasicQuizBuilder.AddingError.duplicateOptions(["o3", "o3", "o5"])
-			)
-		}
+				answer: "o3"
+			),
+			throws: .duplicateOptions(["o3", "o3", "o5"])
+		)
 	}
 	
 	func test_addSingleAnswerQuestion_missingAnswerInOptions_throw() throws {
@@ -171,17 +162,14 @@ class BasicQuizBuilderTest: XCTestCase {
 			options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
 			answer: "o1")
 
-		XCTAssertThrowsError(
+		assert(
 			try sut.add(
 				singleAnswerQuestion: "q2",
 				options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
-				answer: "o6")
-		) { error in
-			XCTAssertEqual(
-				error as? BasicQuizBuilder.AddingError,
-				BasicQuizBuilder.AddingError.missingAnswerInOptions(answer: ["o6"], options: ["o3", "o4", "o5"])
-			)
-		}
+				answer: "o6"
+			),
+			throws: .missingAnswerInOptions(answer: ["o6"], options: ["o3", "o4", "o5"])
+		)
 	}
 	
 	func test_addSingleAnswerQuestion_duplicateQuestion_throw() throws {
@@ -190,23 +178,31 @@ class BasicQuizBuilderTest: XCTestCase {
 			options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
 			answer: "o1")
 		
-		XCTAssertThrowsError(
+		assert(
 			try sut.add(
 				singleAnswerQuestion: "q1",
 				options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
-				answer: "o5")
-		) { error in
-			XCTAssertEqual(
-				error as? BasicQuizBuilder.AddingError,
-				BasicQuizBuilder.AddingError.duplicateQuestion(.singleAnswer("q1"))
-			)
-		}
+				answer: "o5"
+			),
+			throws: .duplicateQuestion(.singleAnswer("q1"))
+		)
 	}
 
 	// MARK: - Helpers
 	
 	private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #file, line: UInt = #line) {
 		XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)
+	}
+	
+	func assert<T>(_ expression: @autoclosure () throws -> T, throws expectedError: BasicQuizBuilder.AddingError, file: StaticString = #filePath, line: UInt = #line) {
+		XCTAssertThrowsError(try expression()) { error in
+			XCTAssertEqual(
+				error as? BasicQuizBuilder.AddingError,
+				expectedError,
+				file: file,
+				line: line
+			)
+		}
 	}
 
 }
