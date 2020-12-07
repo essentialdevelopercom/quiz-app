@@ -5,17 +5,17 @@
 let demoQuiz = try!
 	BasicQuizBuilder(
 		singleAnswerQuestion: "What's Mike's nationality?",
-		options: .init(head: "Canadian", tail: ["American", "Greek"]),
+		options: NonEmptyOptions("Canadian", "American", "Greek"),
 		answer: "Greek"
 	)
 	.adding(
 		multipleAnswerQuestion: "What are Caio's nationalities?",
-		options: .init(head: "Portuguese", tail: ["American", "Brazilian"]),
-		answer: .init(head: "Portuguese", tail: ["Brazilian"])
+		options: NonEmptyOptions("Portuguese", "American", "Brazilian"),
+		answer: NonEmptyOptions("Portuguese", "Brazilian")
 	)
 	.adding(
 		singleAnswerQuestion: "What's the capital of Brazil?",
-		options: .init(head: "Sao Paulo", tail: ["Rio de Janeiro", "Brasilia"]),
+		options: NonEmptyOptions("Sao Paulo", "Rio de Janeiro", "Brasilia"),
 		answer: "Brasilia"
 	)
 	.build()

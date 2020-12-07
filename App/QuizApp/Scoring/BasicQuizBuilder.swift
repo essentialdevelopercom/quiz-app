@@ -11,10 +11,15 @@ public struct BasicQuiz {
 }
 
 public struct NonEmptyOptions {
-	let head: String
-	let tail: [String]
+	private let head: String
+	private let tail: [String]
 	
-	public init(head: String, tail: [String]) {
+	public init(_ head: String, _ tail: String...) {
+		self.head = head
+		self.tail = tail
+	}
+	
+	public init(_ head: String, _ tail: [String]) {
 		self.head = head
 		self.tail = tail
 	}
