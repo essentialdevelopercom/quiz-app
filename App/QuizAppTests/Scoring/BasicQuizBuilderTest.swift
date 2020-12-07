@@ -65,7 +65,7 @@ class BasicQuizBuilderTest: XCTestCase {
 		}
 	}
 	
-	func test_addSingleAnswerQuestion_throwsOnInvalidPaths() throws {
+	func test_addSingleAnswerQuestion_invalidData_throws() throws {
 		var sut = try BasicQuizBuilder(
 			singleAnswerQuestion: "q1",
 			options: ["o1", "o2", "o3"],
