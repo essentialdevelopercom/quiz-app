@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082FEFEF25B5DF92004A5A1F /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D8AF92524C17F0066643A /* QuizEngine.framework */; };
 		0830FF471E6870F1003E2F2B /* iOSUIKitViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FF461E6870F1003E2F2B /* iOSUIKitViewControllerFactoryTest.swift */; };
 		0830FF491E687182003E2F2B /* iOSUIKitViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FF481E687182003E2F2B /* iOSUIKitViewControllerFactory.swift */; };
 		0839033D255AE4F300811D54 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839033C255AE4F300811D54 /* RoundedButton.swift */; };
-		084D8AFA2524C17F0066643A /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D8AF92524C17F0066643A /* QuizEngine.framework */; };
-		084D8AFB2524C17F0066643A /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 084D8AF92524C17F0066643A /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		085901741E69D30C0010165E /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859016F1E69D30C0010165E /* TableViewHelpers.swift */; };
 		085901751E69D30C0010165E /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901711E69D30C0010165E /* QuestionViewControllerTest.swift */; };
 		085901761E69D30C0010165E /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085901731E69D30C0010165E /* ResultsViewControllerTest.swift */; };
@@ -64,20 +63,6 @@
 			remoteInfo = QuizApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		084D8AFC2524C17F0066643A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				084D8AFB2524C17F0066643A /* QuizEngine.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0830FF461E6870F1003E2F2B /* iOSUIKitViewControllerFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSUIKitViewControllerFactoryTest.swift; sourceTree = "<group>"; };
@@ -137,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				084D8AFA2524C17F0066643A /* QuizEngine.framework in Frameworks */,
+				082FEFEF25B5DF92004A5A1F /* QuizEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +459,6 @@
 				0886872E1E64729700A19B60 /* Sources */,
 				0886872F1E64729700A19B60 /* Frameworks */,
 				088687301E64729700A19B60 /* Resources */,
-				084D8AFC2524C17F0066643A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
