@@ -2,8 +2,7 @@
 //  Copyright © 2017 Essential Developer. All rights reserved.
 //
 
-import Foundation
-import QuizEngine
+import BasicQuizDomain
 
 struct QuestionPresenter {
 	let questions: [Question<String>]

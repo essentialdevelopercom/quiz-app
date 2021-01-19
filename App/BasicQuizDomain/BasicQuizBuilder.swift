@@ -2,8 +2,6 @@
 // Copyright © 2020 Essential Developer. All rights reserved.
 //
 
-import QuizEngine
-
 public struct BasicQuiz {
 	public let questions: [Question<String>]
 	public let options: [Question<String>: [String]]

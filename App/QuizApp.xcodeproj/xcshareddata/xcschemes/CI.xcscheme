@@ -75,6 +75,16 @@
                ReferencedContainer = "container:../Engine/QuizEngine.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "083572D125B72E760040E57F"
+               BuildableName = "BasicQuizDomainTests.xctest"
+               BlueprintName = "BasicQuizDomainTests"
+               ReferencedContainer = "container:QuizApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
