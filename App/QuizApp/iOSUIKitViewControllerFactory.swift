@@ -3,7 +3,7 @@
 //
 
 import UIKit
-import QuizEngine
+import BasicQuizDomain
 
 final class iOSUIKitViewControllerFactory: ViewControllerFactory {
 	typealias Answers = [(question: Question<String>, answer: [String])]

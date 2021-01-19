@@ -4,6 +4,7 @@
 
 import UIKit
 import QuizEngine
+import BasicQuizDomain
 
 final class NavigationControllerRouter: QuizDelegate {
 	private let navigationController: UINavigationController

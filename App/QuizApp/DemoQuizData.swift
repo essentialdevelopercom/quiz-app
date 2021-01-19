@@ -2,6 +2,8 @@
 // Copyright © 2020 Essential Developer. All rights reserved.
 //
 
+import BasicQuizDomain
+
 let demoQuiz = try!
 	BasicQuizBuilder(
 		singleAnswerQuestion: "What's Mike's nationality?",

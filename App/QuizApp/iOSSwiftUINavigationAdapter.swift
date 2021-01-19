@@ -5,9 +5,10 @@
 import SwiftUI
 import UIKit
 import QuizEngine
+import BasicQuizDomain
 
 final class iOSSwiftUINavigationAdapter: QuizDelegate {
-	typealias Question = QuizEngine.Question<String>
+	typealias Question = BasicQuizDomain.Question<String>
 	typealias Answer = [String]
 	typealias Answers = [(question: Question, answer: Answer)]
 	
